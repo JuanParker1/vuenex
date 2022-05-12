@@ -1,0 +1,14 @@
+{
+  "name": "vuenex",
+  "version": "0.0.0",
+  "author": "Ivo Dolenc <ivodolenc@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ivodolenc/vuenex",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivodolenc/vuenex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivodolenc/vuenex/issues"
+  }
+}

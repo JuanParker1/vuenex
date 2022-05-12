@@ -1,0 +1,17 @@
+# MacOS
+.DS_Store
+
+# Logs
+logs
+*.log
+*.log*
+
+# Node
+node_modules
+
+# Dotenv
+.env
+
+# Dist
+dist
+dist-ssr
