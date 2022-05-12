@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "extensions": [".html", ".js", ".ts", ".vue"]
+  }
+}
