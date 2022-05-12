@@ -2,7 +2,7 @@
 <br>
 
 <p align="center">
-    <img src=".assets/vuenex-logo.svg" width="150">
+    <img src=".assets/vuenex-icon.svg" width="170">
 </p>
 
 <h1 align="center">VueNex</h1>
