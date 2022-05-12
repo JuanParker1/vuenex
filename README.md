@@ -2,7 +2,7 @@
 <br>
 
 <p align="center">
-    <img src=".assets/vuenex-icon.svg" width="170">
+    <img src=".assets/vuenex-logo.svg" width="170">
 </p>
 
 <h1 align="center">VueNex</h1>
@@ -40,7 +40,7 @@ npm i -D vuenex
 ### Utilities
 
 - [useOnMounted](src/utilities/useOnMounted/) **(Function)** → Checks if `onMounted` hook is called inside of a component lifecycle.
-- [useUnref](src/utilities/useEvent/) **(Function)** → Checks the `ref` value.
+- [useUnref](src/utilities/useUnref/) **(Function)** → Checks the `ref` value.
 
 ### Plugin
 
