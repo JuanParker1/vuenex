@@ -9,36 +9,36 @@ body:
   - type: textarea
     attributes:
       label: Steps to Reproduce
-      description: 'Clear steps that describe how to reproduce the issue.'
+      description: Clear steps that describe how to reproduce the issue.
     validations:
       required: true
   - type: textarea
     attributes:
       label: Current Behavior
-      description: 'Describe what is actually happening.'
+      description: Describe what is actually happening.
     validations:
       required: true
   - type: textarea
     attributes:
       label: Expected Behavior
-      description: 'Describe what you expected to happen.'
+      description: Describe what you expected to happen.
     validations:
       required: true
   - type: textarea
     attributes:
       label: Additional Details
-      description: '`OPTIONAL`: Provide information that may be helpful.'
+      description: Provide information that may be helpful.
   - type: input
     id: version-vuenex
     attributes:
       label: VueNex Version
-      description: 'Specify the exact version.'
+      description: Specify the exact version.
       placeholder: '0.0.1'
   - type: input
     id: version-vue
     attributes:
       label: Vue Version
-      description: 'Specify the exact version.'
+      description: Specify the exact version.
       placeholder: '3.2.33'
   - type: markdown
     attributes:
