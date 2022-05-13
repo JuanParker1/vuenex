@@ -46,6 +46,10 @@ npm i -D vuenex
 
 - [VueNex](src/plugin/) **(App-level)** → Activates all `directives` globally.
 
+## Contributing 🤝
+
+Check out the [Contributing Guide](CONTRIBUTING.md) for more info.
+
 ## License 📃
 
 ### VueNex
