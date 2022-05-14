@@ -14,10 +14,8 @@ useClick(target, action, attribute, values)
 
 ```html
 <template>
-  <div ref="target1" @click="addClass">Add classes</div>
-  <div ref="target2" class="text-blue-600" @click="removeClass">
-    Remove classes
-  </div>
+  <div ref="target1">Add classes</div>
+  <div ref="target2" class="text-blue-600">Remove classes</div>
 </template>
 
 <script setup>
@@ -27,13 +25,8 @@ useClick(target, action, attribute, values)
   const target1 = ref()
   const target2 = ref()
 
-  const addClass = useClick(
-    target1,
-    'add',
-    'class',
-    'bg-green-100 text-green-600'
-  )
-  const removeClass = useClick(target2, 'remove', 'class', 'text-blue-600')
+  useClick(target1, 'add', 'class', 'bg-green-100 text-green-600')
+  useClick(target2, 'remove', 'class', 'text-blue-600')
 </script>
 ```
 
@@ -41,12 +34,8 @@ useClick(target, action, attribute, values)
 
 ```html
 <template>
-  <div ref="target1" style="font-size: 3rem" @click="addStyle">Add styles</div>
-  <div
-    ref="target2"
-    style="font-size: 3rem; background: blue"
-    @click="removeStyle"
-  >
+  <div ref="target1" style="font-size: 3rem">Add styles</div>
+  <div ref="target2" style="color: white; font-size: 3rem; background: blue">
     Remove styles
   </div>
 </template>
@@ -58,18 +47,10 @@ useClick(target, action, attribute, values)
   const target1 = ref()
   const target2 = ref()
 
-  const addStyle = useClick(
-    target1,
-    'add',
-    'style',
-    'background: green; color: white;'
-  )
+  useClick(target1, 'add', 'style', 'background: green; color: white;')
 
-  // Empty 'array' will remove all styles from the element
-  const removeStyle = useClick(target2, 'remove', 'style', [])
-
-  // To remove only specific properties, simply add them to the array
-  const removeStyle = useClick(target2, 'remove', 'style', ['background'])
+  // Empty [] will remove all styles from the element
+  useClick(target2, 'remove', 'style', ['color', 'background'])
 </script>
 ```
 
@@ -113,6 +94,8 @@ v-click="[action, attribute, values]"
   import { vClick } from 'vuenex'
 
   const addStyles = ref(['add', 'style', 'background: green; color: white;'])
+
+  // Empty [] will remove all styles from the element
   const removeStyles = ref(['remove', 'style', ['background']])
 </script>
 ```
