@@ -10,11 +10,21 @@ Removes focus from a specific element.
 useBlur(el)
 ```
 
-### Example
+### Examples
 
 ```html
 <template>
-  <input ref="target" @keydown.esc="removeFocus" @keydown.enter="removeFocus" />
+  <input ref="target" @keydown.enter="useBlur($event)" />
+</template>
+
+<script setup>
+  import { useBlur } from 'vuenex'
+</script>
+```
+
+```html
+<template>
+  <input ref="target" @keydown.esc="removeFocus" />
 </template>
 
 <script setup>
