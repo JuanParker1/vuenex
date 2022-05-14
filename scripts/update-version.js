@@ -6,14 +6,15 @@ const { pkg, useTerminalLogs } = require('./environment')
  *
  * @since 0.0.1
  */
-const updatePackageVersion = () => {
-  const gitAdd = `git add package.json`
-  const gitCommit = `git commit -m "chore(release): ${pkg.version}"`
-  const gitPush = `git push`
+const runCommands = () => {
+  const commands = [
+    'git add package.json',
+    `git commit -m 'chore(release): ${pkg.version}'`,
+    'git push',
+    'npm publish'
+  ]
 
-  execSync(gitAdd)
-  execSync(gitCommit)
-  execSync(gitPush)
+  commands.forEach(command => execSync(command))
 }
 
 /**
@@ -38,5 +39,5 @@ const runTerminalLogs = () => {
   useTerminalLogs(success, info, details)
 }
 
-updatePackageVersion()
+runCommands()
 runTerminalLogs()
