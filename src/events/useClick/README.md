@@ -10,7 +10,7 @@ Triggers custom actions on element click.
 useClick(target, action, attribute, values)
 ```
 
-### Example
+### Class Example
 
 ```html
 <template>
@@ -37,6 +37,42 @@ useClick(target, action, attribute, values)
 </script>
 ```
 
+### Style Example
+
+```html
+<template>
+  <div ref="target1" style="font-size: 3rem" @click="addStyle">Add styles</div>
+  <div
+    ref="target2"
+    style="font-size: 3rem; background: blue"
+    @click="removeStyle"
+  >
+    Remove styles
+  </div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { useClick } from 'vuenex'
+
+  const target1 = ref()
+  const target2 = ref()
+
+  const addStyle = useClick(
+    target1,
+    'add',
+    'style',
+    'background: green; color: white;'
+  )
+
+  // Empty 'array' will remove all styles from the element
+  const removeStyle = useClick(target2, 'remove', 'style', [])
+
+  // To remove only specific properties, simply add them to the array
+  const removeStyle = useClick(target2, 'remove', 'style', ['background'])
+</script>
+```
+
 ## Directive
 
 ### API
@@ -45,7 +81,7 @@ useClick(target, action, attribute, values)
 v-click="[action, attribute, values]"
 ```
 
-### Example
+### Class Example
 
 ```html
 <template>
@@ -59,6 +95,25 @@ v-click="[action, attribute, values]"
 
   const addClass = ref(['add', 'class', 'bg-green-100 text-green-600'])
   const removeClass = ref(['remove', 'class', 'text-blue-600'])
+</script>
+```
+
+### Style Example
+
+```html
+<template>
+  <div v-click="addStyles">Add styles</div>
+  <div v-click="removeStyles" style="background: blue; font-size: 3rem">
+    Remove styles
+  </div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { vClick } from 'vuenex'
+
+  const addStyles = ref(['add', 'style', 'background: green; color: white;'])
+  const removeStyles = ref(['remove', 'style', ['background']])
 </script>
 ```
 
