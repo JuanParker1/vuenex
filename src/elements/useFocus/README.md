@@ -10,7 +10,7 @@ Sets focus on a specific element.
 useFocus(el, options)
 ```
 
-### Example
+### Examples
 
 ```html
 <template>
@@ -24,6 +24,20 @@ useFocus(el, options)
   const target = ref()
 
   useFocus(target, true) // 'true' will prevent browser scroll
+</script>
+```
+
+```html
+<template>
+  <button @click="useFocus(target)">Set Focus</button>
+  <input ref="target" />
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { useFocus } from 'vuenex'
+
+  const target = ref()
 </script>
 ```
 
