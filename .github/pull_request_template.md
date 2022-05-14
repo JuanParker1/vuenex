@@ -28,7 +28,4 @@
 
 <!-- Describe your new request in detail. -->
 
-<!--
-  - Update the documentation with the attached links, e.g. Docs #link1, #link2, #link3 etc.
-  - Add links to related issues, e.g. Fixes #123, Addresses #123, Related to #123 etc.
--->
+<!-- Add links to related issues, e.g. fixes #number, resolves #number, closes #number etc. -->
