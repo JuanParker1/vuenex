@@ -1,5 +1,3 @@
-const chalk = require('chalk')
-
 /**
  * Specifies the package details.
  *
@@ -15,36 +13,30 @@ const pkg = {
 }
 
 /**
- * Custom util for console logs.
+ * Stylizes console logs in node.
+ *
+ * @since 0.2.0
+ */
+const color = {
+  cyan: value => '\x1b[36m' + value + '\x1b[0m',
+  green: value => '\x1b[32m' + value + '\x1b[0m',
+  red: value => '\x1b[31m' + value + '\x1b[0m'
+}
+
+/**
+ * Easily logs custom messages.
  *
  * @since 0.0.1
  */
 const log = {
   n: () => console.log(),
-  success: message => console.log(chalk.green('✔ ' + message)),
-  info: message => console.log(chalk.cyan('ℹ ' + message)),
-  details: message => console.log(chalk.cyan(`  ${message}`))
-}
-
-/**
- * Outputs package details in the terminal.
- *
- * @since 0.0.1
- *
- * @param {string} success
- * @param {string} info
- * @param {array} details
- */
-const useTerminalLogs = (success, info, details) => {
-  log.n()
-  success ? log.success(success) : null
-  info ? log.info(info) : null
-  details ? details.forEach(line => log.details(line)) : null
-  log.n()
+  success: message => console.log(color.green(`✔ ${message}`)),
+  info: message => console.log(color.cyan(`ℹ ${message}`)),
+  details: message => console.log(color.cyan(`  ${message}`)),
+  error: message => console.log(color.red(`✖ ${message}`))
 }
 
 module.exports = {
   pkg,
-  log,
-  useTerminalLogs
+  log
 }
