@@ -13,7 +13,7 @@ export const addClassesRemoveEvent = (el, binding) => {
     el.removeEventListener('click', () => {
       const classes = binding.value[2].split(' ')
 
-      el.classList.remove(...classes)
+      el.classList.add(...classes)
     })
   }
 }

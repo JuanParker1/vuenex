@@ -10,7 +10,7 @@ Triggers custom actions on element click.
 useClick(target, action, attribute, values)
 ```
 
-### Class Example
+### Class Examples
 
 ```html
 <template>
@@ -27,6 +27,24 @@ useClick(target, action, attribute, values)
 
   useClick(target1, 'add', 'class', 'bg-green-100 text-green-600')
   useClick(target2, 'remove', 'class', 'text-blue-600')
+</script>
+```
+
+```html
+<template>
+  <div ref="target2" class="text-3xl text-blue-600 bg-blue-100">
+    Remove all classes
+  </div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { useClick } from 'vuenex'
+
+  const target2 = ref()
+
+  // Empty '' will remove all classes from the element
+  useClick(target2, 'remove', 'class', '')
 </script>
 ```
 
@@ -62,7 +80,7 @@ useClick(target, action, attribute, values)
 v-click="[action, attribute, values]"
 ```
 
-### Class Example
+### Class Examples
 
 ```html
 <template>
@@ -76,6 +94,21 @@ v-click="[action, attribute, values]"
 
   const addClass = ref(['add', 'class', 'bg-green-100 text-green-600'])
   const removeClass = ref(['remove', 'class', 'text-blue-600'])
+</script>
+```
+
+```html
+<template>
+  <div
+    v-click="['remove', 'class', '']"
+    class="text-3xl text-blue-600 bg-blue-100"
+  >
+    Remove all classes
+  </div>
+</template>
+
+<script setup>
+  import { vClick } from 'vuenex'
 </script>
 ```
 

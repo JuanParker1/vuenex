@@ -5,9 +5,14 @@ export const removeClasses = (target, attribute, values) => {
   if (attribute === 'class') {
     useEvent(target, 'click', () => {
       const el = useUnref(target)
-      const classes = values.split(' ')
 
-      el.classList.remove(...classes)
+      if (values !== '') {
+        const classes = values.split(' ')
+
+        el.classList.remove(...classes)
+      } else {
+        el.className = ''
+      }
     })
   }
 }
