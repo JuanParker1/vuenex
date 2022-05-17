@@ -72,6 +72,47 @@ useClick(target, action, attribute, values)
 </script>
 ```
 
+### Attribute Examples
+
+```html
+<template>
+  <div ref="target1">Add attributes</div>
+  <div ref="target2" data-vuenex>Remove attributes</div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { useClick } from 'vuenex'
+
+  const target1 = ref()
+  const target2 = ref()
+
+  useClick(target1, 'add', 'attr', 'data-vuenex')
+  useClick(target2, 'remove', 'attr', 'data-vuenex')
+</script>
+```
+
+```html
+<template>
+  <div ref="target1">Add attributes</div>
+  <div ref="target2">Add attributes with values</div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { useClick } from 'vuenex'
+
+  const target1 = ref()
+  const target2 = ref()
+
+  // 'attr' is an abbreviation of 'attribute', both values are acceptable
+  useClick(target1, 'add', 'attr', 'data-vuenex')
+
+  // To add attrs with values, simply use [name, value] syntax
+  useClick(target2, 'add', 'attr', ['data-color', 'green'])
+</script>
+```
+
 ## Directive
 
 ### API
@@ -130,6 +171,39 @@ v-click="[action, attribute, values]"
 
   // Empty [] will remove all styles from the element
   const removeStyles = ref(['remove', 'style', ['background']])
+</script>
+```
+
+### Attribute Examples
+
+```html
+<template>
+  <div v-click="addAttrs">Add attributes</div>
+  <div v-click="removeAttrs" data-vuenex>Remove attributes</div>
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import { vClick } from 'vuenex'
+
+  // 'attr' is an abbreviation of 'attribute', both values are acceptable
+  const addAttrs = ref(['add', 'attr', 'data-vuenex'])
+  const removeAttrs = ref(['remove', 'attr', 'data-vuenex'])
+</script>
+```
+
+```html
+<template>
+  <div v-click="['add', 'attr', ['data-color', 'green']]">
+    Add attributes with values
+  </div>
+  <div v-click="['remove', 'attr', 'data-vuenex']" data-vuenex>
+    Remove attributes
+  </div>
+</template>
+
+<script setup>
+  import { vClick } from 'vuenex'
 </script>
 ```
 
