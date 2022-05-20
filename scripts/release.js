@@ -10,7 +10,7 @@ const { pkg, log } = require('./environment')
 const commitChanges = () => {
   const getNewVersion = execSync(`node -p "require('./package.json').version"`)
   const newVersion = getNewVersion.toString().trim()
-  const commands = `git add package.json && git commit --no-verify -m 'chore(release): ${newVersion}' && git push --no-verify && npm publish`
+  const commands = `git add package.json && git commit --no-verify -m 'chore(release): ${newVersion}' && git push --no-verify && npm publish --userconfig=~/.npmrc`
 
   const success = `Package version successfully updated and pushed to Github repository! 🥳 `
   const info = `New package version: ${newVersion}`
