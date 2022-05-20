@@ -8,16 +8,19 @@ import { useEvent } from '../useEvent'
  *
  * @param {HTMLElement} el
  * @param {function} callback
+ * @param {object} options
  */
-export const useClickOutside = (el, callback) => {
+export const useClickOutside = (el, callback, options = {}) => {
+  const { event = 'click', passive = true, capture = true } = options
+
   const clickOutside = e => {
     const element = useUnref(el)
 
     if (!element || element === e.target || e.composedPath().includes(element))
       return
 
-    callback()
+    callback(e)
   }
 
-  return useEvent(window, 'click', clickOutside)
+  return useEvent(window, event, clickOutside, { passive, capture })
 }

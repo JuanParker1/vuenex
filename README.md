@@ -34,7 +34,7 @@ npm i -D vuenex
 ### Events
 
 - [useClick](src/events/useClick/) **(Function + Directive)** → Triggers custom actions on element `click`.
-- [useClickOutside](src/events/useClickOutside/) **(Function)** → Detects clicks `outside` of an element.
+- [useClickOutside](src/events/useClickOutside/) **(Function + Directive)** → Detects clicks `outside` of an element.
 - [useEvent](src/events/useEvent/) **(Function)** → Sets `event` on a specific target.
 
 ### Utilities
