@@ -1,4 +1,5 @@
 import { vClick } from '..'
+import { vClickOutside } from '..'
 import { vFocus } from '..'
 
 /**
@@ -7,20 +8,24 @@ import { vFocus } from '..'
  * @since 0.0.1
  */
 export const VueNex = {
-  install(app, pluginOptions) {
-    const options = {
+  install(app, options = {}) {
+    const {
       directives: {
-        useClick: true,
-        useFocus: true
-      },
-      ...pluginOptions
-    }
+        useClick: useClickDirective = true,
+        useClickOutside: useClickOutsideDirective = true,
+        useFocus: useFocusDirective = true
+      } = {}
+    } = options
 
-    if (options.directives.useClick) {
+    if (useClickDirective) {
       app.directive('click', vClick)
     }
 
-    if (options.directives.useFocus) {
+    if (useClickOutsideDirective) {
+      app.directive('click-outside', vClickOutside)
+    }
+
+    if (useFocusDirective) {
       app.directive('focus', vFocus)
     }
   }

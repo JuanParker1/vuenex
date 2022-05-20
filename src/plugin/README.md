@@ -2,7 +2,7 @@
 
 Activates all directives globally.
 
-Plugin is not activated by default. You can activate all directives globally or import a specific part into the local file.
+Plugin is not activated by default installation. You can activate all directives globally or import a specific part into the local file.
 
 ### Global Import
 
@@ -37,7 +37,9 @@ The directive will only be available in the local file where it was imported.
 
 ### API
 
-All directives are enabled by default when used via `VueNex` plugin. The additional configuration allows you to disable a specific directives if necessary.
+All directives are enabled by default when used via `VueNex` plugin.
+
+If you don't need specific directives, you can simple disabled them via additional configuration:
 
 ```js
 // main.js
@@ -46,9 +48,7 @@ import { VueNex } from 'vuenex'
 
 app.use(VueNex, {
   directives: {
-    useClick: true,
-    useFocus: false // Disable focus directive
-    // ...
+    useFocus: false // Disable focus directive only
   }
 })
 ```
