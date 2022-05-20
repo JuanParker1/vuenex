@@ -1,22 +1,6 @@
-import { addClassesAddEvent, addClassesRemoveEvent } from './addClasses'
-import { addStylesAddEvent, addStylesRemoveEvent } from './addStyles'
-
-import {
-  addAttributesAddEvent,
-  addAttributesRemoveEvent
-} from './addAttributes'
-
-import {
-  removeClassesAddEvent,
-  removeClassesRemoveEvent
-} from './removeClasses'
-
-import { removeStylesAddEvent, removeStylesRemoveEvent } from './removeStyles'
-
-import {
-  removeAttributesAddEvent,
-  removeAttributesRemoveEvent
-} from './removeAttributes'
+import { addClasses, removeClasses } from './classes'
+import { addStyles, removeStyles } from './styles'
+import { addAttributes, removeAttributes } from './attributes'
 
 /**
  * Triggers custom actions on element click.
@@ -33,39 +17,55 @@ import {
  * @example v-click="['remove', 'attr', 'data-vuenex']"
  */
 export const vClick = {
-  mounted: (el, binding) => {
-    if (binding.value[0] === 'add') {
-      addClassesAddEvent(el, binding)
+  mounted: (el, { value }) => {
+    const [action, attribute, values] = value
 
-      addStylesAddEvent(el, binding)
+    if (action === 'add') {
+      addClasses(el, attribute, values)
 
-      addAttributesAddEvent(el, binding)
+      addStyles(el, attribute, values)
+
+      addAttributes(el, attribute, values)
     }
 
-    if (binding.value[0] === 'remove') {
-      removeClassesAddEvent(el, binding)
+    if (action === 'remove') {
+      removeClasses(el, attribute, values)
 
-      removeStylesAddEvent(el, binding)
+      removeStyles(el, attribute, values)
 
-      removeAttributesAddEvent(el, binding)
+      removeAttributes(el, attribute, values)
     }
   },
 
-  beforeUnmounted: (el, binding) => {
-    if (binding.value[0] === 'add') {
-      addClassesRemoveEvent(el, binding)
+  beforeUnmount: (el, { value }) => {
+    const [action, attribute] = value
 
-      addStylesRemoveEvent(el, binding)
+    if (action === 'add') {
+      if (attribute === 'class') {
+        el.removeEventListener('click', el._clickAddClasses)
+      }
 
-      addAttributesRemoveEvent(el, binding)
+      if (attribute === 'style') {
+        el.removeEventListener('click', el._clickAddStyles)
+      }
+
+      if (attribute === 'attr' || attribute === 'attributes') {
+        el.removeEventListener('click', el._clickAddAttributes)
+      }
     }
 
-    if (binding.value[0] === 'remove') {
-      removeClassesRemoveEvent(el, binding)
+    if (action === 'remove') {
+      if (attribute === 'class') {
+        el.removeEventListener('click', el._clickRemoveClasses)
+      }
 
-      removeStylesRemoveEvent(el, binding)
+      if (attribute === 'style') {
+        el.removeEventListener('click', el._clickRemoveStyles)
+      }
 
-      removeAttributesRemoveEvent(el, binding)
+      if (attribute === 'attr' || attribute === 'attributes') {
+        el.removeEventListener('click', el._clickRemoveAttributes)
+      }
     }
   }
 }

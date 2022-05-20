@@ -1,9 +1,6 @@
-import { addClasses } from './addClasses'
-import { addStyles } from './addStyles'
-import { addAttributes } from './addAttributes'
-import { removeClasses } from './removeClasses'
-import { removeStyles } from './removeStyles'
-import { removeAttributes } from './removeAttributes'
+import { addClasses, removeClasses } from './classes'
+import { addStyles, removeStyles } from './styles'
+import { addAttributes, removeAttributes } from './attributes'
 
 /**
  * Triggers custom actions on element click.
