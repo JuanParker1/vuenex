@@ -4,7 +4,7 @@ Detects clicks outside of an element.
 
 ## Function
 
-It's possible to specify custom `options`, for example detect `mousedown` or `mouseup` event outside of an element. Also,
+It's possible to specify custom `options`, for example detect `mousedown` or `mouseup` event outside of an element.
 
 ### API
 
