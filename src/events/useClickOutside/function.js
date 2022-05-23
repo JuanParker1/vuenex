@@ -1,14 +1,17 @@
-import { useUnref } from '../../utilities/useUnref'
-import { useEvent } from '../useEvent'
+import { useUnref } from '../../shared'
+import { useEvent } from '..'
 
 /**
  * Detects clicks outside of an element.
  *
  * @since 0.0.1
  *
- * @param {HTMLElement} el
+ * @param {ref|HTMLElement} el
  * @param {function} callback
  * @param {object} options
+ * @param {string} options.event
+ * @param {boolean} options.passive
+ * @param {boolean} options.capture
  */
 export const useClickOutside = (el, callback, options = {}) => {
   const { event = 'click', passive = true, capture = true } = options
@@ -22,5 +25,9 @@ export const useClickOutside = (el, callback, options = {}) => {
     callback(e)
   }
 
-  return useEvent(window, event, clickOutside, { passive, capture })
+  const cleanup = [useEvent(window, event, clickOutside, { passive, capture })]
+
+  const stop = () => cleanup.forEach(fn => fn())
+
+  return stop
 }

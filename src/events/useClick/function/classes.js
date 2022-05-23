@@ -1,5 +1,5 @@
-import { useUnref } from '../../../utilities/useUnref'
-import { useEvent } from '../../../events/useEvent'
+import { useUnref } from '../../../shared'
+import { useEvent } from '../..'
 
 export const addClasses = (target, attribute, values) => {
   if (attribute === 'class') {

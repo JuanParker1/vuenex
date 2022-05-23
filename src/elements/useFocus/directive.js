@@ -6,10 +6,9 @@
  * @example v-focus | v-focus.preventScroll
  */
 export const vFocus = {
-  mounted: (el, binding) => {
-    if (binding.modifiers.preventScroll)
-      return el.focus({ preventScroll: true })
+  mounted: (el, { modifiers }) => {
+    if (modifiers.preventScroll) el.focus({ preventScroll: true })
 
-    return el.focus()
+    el.focus()
   }
 }

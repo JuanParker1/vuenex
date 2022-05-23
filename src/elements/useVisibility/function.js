@@ -1,12 +1,12 @@
 import { ref, unref, onMounted } from 'vue'
-import { useEvent } from '../../events/useEvent'
+import { useEvent } from '../../events'
 
 /**
  * Checks an element visibility within the viewport.
  *
  * @since 0.0.1
  *
- * @param {HTMLElement} el
+ * @param {ref|HTMLElement} el
  * @param {object} options
  * @param {boolean} options.scroll
  * @param {boolean} options.threshold

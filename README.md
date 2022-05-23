@@ -37,14 +37,14 @@ npm i -D vuenex
 - [useClickOutside](src/events/useClickOutside/) **(Function + Directive)** → Detects clicks `outside` of an element.
 - [useEvent](src/events/useEvent/) **(Function)** → Sets `event` on a specific target.
 
-### Utilities
+### Shared
 
-- [useOnMounted](src/utilities/useOnMounted/) **(Function)** → Checks if `onMounted` hook is called inside of a component lifecycle.
-- [useUnref](src/utilities/useUnref/) **(Function)** → Checks the `ref` value.
+- [useOnMounted](src/shared/useOnMounted/) **(Function)** → Checks if `onMounted` hook is called inside of a component lifecycle.
+- [useUnref](src/shared/useUnref/) **(Function)** → Checks the `ref` value.
 
 ### Plugin
 
-- [VueNex](src/plugin/) **(App-level)** → Activates all `directives` globally.
+- [VueNex](src/plugin/) **(Plugin)** → Activates all `directives` globally.
 
 ## Contributing 🤝
 

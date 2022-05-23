@@ -7,7 +7,7 @@ import { addAttributes, removeAttributes } from './attributes'
  *
  * @since 0.0.1
  *
- * @param {ref} target
+ * @param {ref|HTMLElement} target
  * @param {string} action
  * @param {string} attribute
  * @param {string|array} values

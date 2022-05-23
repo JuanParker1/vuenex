@@ -1,12 +1,11 @@
-import { useOnMounted } from '../../utilities/useOnMounted'
-import { useUnref } from '../../utilities/useUnref'
+import { useOnMounted, useUnref } from '../../shared'
 
 /**
  * Sets focus on a specific element.
  *
  * @since 0.0.1
  *
- * @param {HTMLElement} el
+ * @param {ref|HTMLElement} el
  * @param {object} options
  * @param {boolean} options.preventScroll
  */

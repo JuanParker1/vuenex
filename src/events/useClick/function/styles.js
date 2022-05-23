@@ -1,5 +1,5 @@
-import { useUnref } from '../../../utilities/useUnref'
-import { useEvent } from '../../useEvent'
+import { useUnref } from '../../../shared'
+import { useEvent } from '../..'
 
 export const addStyles = (target, attribute, values) => {
   if (attribute === 'style') {
