@@ -39,6 +39,7 @@ npm i -D vuenex
 
 ### Shared
 
+- [useOnBeforeUnmount](src/shared/useOnBeforeUnmount/) **(Function)** → Checks if `onBeforeUnmount` hook is called inside of a component lifecycle.
 - [useOnMounted](src/shared/useOnMounted/) **(Function)** → Checks if `onMounted` hook is called inside of a component lifecycle.
 - [useUnref](src/shared/useUnref/) **(Function)** → Checks the `ref` value.
 
