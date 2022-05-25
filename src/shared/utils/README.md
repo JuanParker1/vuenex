@@ -114,6 +114,21 @@ import { noop } from 'vuenex'
 noop
 ```
 
+### isEmpty
+
+```js
+import { isEmpty } from 'vuenex'
+
+isEmpty(value)
+
+console.log(isEmpty('')) // true
+console.log(isEmpty({})) // true
+console.log(isEmpty([])) // true
+console.log(isEmpty(null)) // true
+console.log(isEmpty(undefined)) // true
+console.log(isEmpty(NaN)) // true
+```
+
 ## Source
 
-[Environment](index.js)
+[Utilities](index.js)
